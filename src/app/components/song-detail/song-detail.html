@@ -1,0 +1,18 @@
+<div *ngIf="viewMode; else viewModeFalse">
+    <div *ngIf="currentSong.id">
+        <div><label><strong>Autor:</strong></label>{{ currentSong.autor }}</div>
+        <div><label><strong>Año:</strong></label>{{ currentSong.ano}}</div>
+        <div><label><strong>Disco:</strong></label>{{ currentSong.disco}}</div>
+        <div><label><strong>Estilo:</strong></label>{{ currentSong.estilo}}</div>
+        <div><label><strong>URL:</strong></label>{{ currentSong.previewUrl}}</div>
+        <button (click)="toggle()">{{msg}}</button>
+    </div>
+    <div *ngIf="!currentSong">
+        <br />
+        <p>{{please}}</p>
+    </div>
+</div>
+<ng-template #viewModeFalse>
+    <button (click)="toggle()">{{msg}}</button>
+</ng-template>
+

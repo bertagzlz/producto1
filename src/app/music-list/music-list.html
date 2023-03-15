@@ -1,0 +1,49 @@
+<p>
+    <mat-toolbar>
+        <span>Producto 1. Listado y detalle de todas tus canciones</span>
+    </mat-toolbar>
+</p>
+
+<div class="player-container">
+    <app-player [song]="currentSong" [index]="currentIndex" [FLAG]="flag"></app-player>
+</div>
+<body translate="no">
+<div class="container">
+    <div class="column add-bottom">
+        <div id="mainwrap">
+
+            <div class="search-name">
+                <input class="form-control" type="text" name="search"
+                       autocomplete="on" placeholder=" Buscar canción  ">
+            </div>
+
+            <div id="plwrap">
+                <ul id="plList">
+                    <li *ngFor="let song of songs; let i = index"
+                        [class.active]="i == currentIndex"
+                        (click)="setActiveSong(song, i)">
+                        <div class="plItem">
+                            <span class="plNum">{{ song.numero }}</span>
+                            <span class="plTitle"> {{ song.titulo }}</span>
+                            <span class="plLength">{{ song.longitud }}</span>
+                        </div>
+                        <app-song-detail [currentSong]="song"></app-song-detail>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="column add-bottom center">
+        <p>Equipo: xxxx / yyyy / zzzz</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+

@@ -1,0 +1,20 @@
+<mat-card *ngIf="song.id && FLAG">
+    <!--<mat-card *ngFor="let song of song?.results; let index = index">-->
+    <!-- ?. stops evaluating when song is null or undefined.
+    So, wait for the fetched data from the server, then we have song.results-->
+    <mat-card-title>
+        {{song.titulo}}
+    </mat-card-title>
+    <img mat-card-img [src]="song.img">
+    <mat-card-content>
+        <audio controls [id]="index">
+            <source [src]="song.previewUrl" type="audio/ogg">
+            <source [src]="song.previewUrl" type="audio/mpeg">
+        </audio>
+    </mat-card-content>
+    <mat-card-actions>
+        <button #stopBtn mat-button color="primary" (click)="stopSong(song)">STOP</button>
+        <button #playBtn mat-flat-button color="primary" (click)="playSong(song)">PLAY</button>
+        <button #pauseBtn mat-flat-button color="primary" (click)="pauseSong(song)">PAUSE</button>
+    </mat-card-actions>
+</mat-card>
