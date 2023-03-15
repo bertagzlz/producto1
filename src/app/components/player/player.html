@@ -1,20 +1,25 @@
-<mat-card *ngIf="song.id && FLAG">
-    <!--<mat-card *ngFor="let song of song?.results; let index = index">-->
+<div *ngIf="song.id && FLAG">
+
     <!-- ?. stops evaluating when song is null or undefined.
     So, wait for the fetched data from the server, then we have song.results-->
-    <mat-card-title>
+    <h2>
         {{song.titulo}}
-    </mat-card-title>
-    <img mat-card-img [src]="song.img">
-    <mat-card-content>
-        <audio controls [id]="index">
+    </h2>
+    <img  [src]="song.img" alt="image">
+    <div>
+        <!--<audio controls [id]="index">-->
+        <audio controls [id]="player">
             <source [src]="song.previewUrl" type="audio/ogg">
             <source [src]="song.previewUrl" type="audio/mpeg">
         </audio>
-    </mat-card-content>
-    <mat-card-actions>
-        <button #stopBtn mat-button color="primary" (click)="stopSong(song)">STOP</button>
-        <button #playBtn mat-flat-button color="primary" (click)="playSong(song)">PLAY</button>
-        <button #pauseBtn mat-flat-button color="primary" (click)="pauseSong(song)">PAUSE</button>
-    </mat-card-actions>
-</mat-card>
+    </div>
+    <!--<ul>
+       <li><button #stopBtn mat-button color="primary" (click)="stopSong(song)">STOP</button></li>
+        <li><button #playBtn mat-flat-button color="primary" (click)="playSong(song)">PLAY</button></li>
+        <li><button #pauseBtn mat-flat-button color="primary" (click)="pauseSong(song)">PAUSE</button></li>
+    </ul>-->
+    <!--<button #stopBtn mat-flat-button color="primary" (click)="stopSong(song)">STOP</button>
+    <button #playBtn mat-flat-button color="primary" (click)="playSong(song)">PLAY</button>
+    <button #pauseBtn mat-flat-button color="primary" (click)="pauseSong(song)">PAUSE</button>
+    <span #time color="warning">{{player.currentTime}} / {{player.duration}}</span>-->
+</div>

@@ -1,8 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
-
-// @ts-ignore
-// no usado, lee el json diretamente en la variable songs
-import * as data from '../songs.json';
+import { Component, OnInit } from '@angular/core';
 
 import { Songs } from '../models/Songs.model';
 import { Song } from '../models/song.model';
@@ -12,7 +8,7 @@ import { Song } from '../models/song.model';
   templateUrl: './music-list.html',
   styleUrls: ['./music-list.scss']
 })
-export class MusicList implements OnInit{
+export class MusicListComponent implements OnInit{
   objSongs = new Songs('mis songs');
   songs = this.objSongs.getSongs();
   // no usado, era para el json

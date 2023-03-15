@@ -4,6 +4,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 @import url("https://cdn.plyr.io/3.6.2/plyr.css");
 
+/* You can add global styles to this file, and also import other style files */
+// @import "~bootstrap/dist/css/bootstrap.css";
+
 /* Global Styles
 ================================================== */
 
@@ -39,7 +42,7 @@ html,body {
 
 /* Typography / Links
 ================================================== */
-
+h1 {font-size: 1.3rem; color:#8cc3e6; text-decoration:underline;}
 p { /*color:#fff;*/
     display:block; font-size:.9rem; font-weight:400; margin:0 0 2px; }
 
@@ -62,72 +65,23 @@ p a,p a:visited { line-height:inherit; }
     text-align:center;
     width:90%;
 }
-
-
 /* Audio Player Styles
 ================================================== */
-
 audio {
     /*display:none;*/
 }
-
 #audiowrap,
-#plwrap {
-    margin:0 auto;
-}
-
-#tracks {
-    font-size:0;
-    position:relative;
-    text-align:center;
-}
-
-#nowPlay {
-    display:block;
-    font-size:0;
-}
-
-#nowPlay span {
-    display:inline-block;
-    font-size:1.05rem;
-    vertical-align:top;
-}
-
-#nowPlay span#npAction {
-    padding:21px;
-    width:30%;
-}
-
-#nowPlay span#npTitle {
-    padding:21px;
-    text-align:right;
-    width:70%;
-}
-
-#plList li {
-    cursor:pointer;
-    display:block;
-    margin:0;
-    padding:21px 0;
-}
-
-#plList li:hover {
-    background-color:rgba(0, 0, 0, .1);
-}
-
-.plItem {
-    position:relative;
-}
-
-.plTitle {
-    left:50px;
-    overflow:hidden;
-    position:absolute;
-    right:65px;
-    text-overflow:ellipsis;
-    top:0;
-    white-space:nowrap;
-}
+#plwrap { margin:0 auto; }
+#tracks { font-size:0; position:relative; text-align:center; }
+#nowPlay { display:block; font-size:0; }
+#nowPlay span { display:inline-block; font-size:1.05rem; vertical-align:top; }
+#nowPlay span#npAction { padding:21px; width:30%; }
+#nowPlay span#npTitle { padding:21px; text-align:right; width:70%; }
+#plList li { cursor:pointer; display:block; margin:0; padding:21px 0; }
+#plList li:hover { background-color:rgba(0, 0, 0, .1); }
+.plItem { position:relative; }
+.plTitle { left:50px; overflow:hidden; position:absolute; right:65px; text-overflow:ellipsis;
+    top:0; white-space:nowrap; }
 
 .plNum {
     padding-left:21px;
